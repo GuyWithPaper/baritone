@@ -18,12 +18,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class BaseHuntCommand implements Command {
-    protected final IBaritone baritone;
-    private final String[] ACTIONS = new String[]{"start", "stop", "clear", "list", "scan", "potential", "setup", "help"};
+public class BaseHuntCommand extends Command {
+    private static final String[] ACTIONS = {"start", "stop", "clear", "list", "scan", "potential", "setup", "help"};
 
     public BaseHuntCommand(IBaritone baritone) {
-        this.baritone = baritone;
+        super(baritone, "basehunt", "hunt", "findbases");
     }
 
     @Override
